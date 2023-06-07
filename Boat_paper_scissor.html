@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>game</title>
+    <h1>rock-paper-scissor</h1>
+
+  </head>
+  <body>
+      <script>
+      let comp='';
+      let result='';
+      let rand;
+      function computerresp()
+      {   rand=Math.random();
+          console.log(rand);
+          if(rand>=0 && rand<1/3){
+            comp='rock';
+          }
+          else if (rand>=1/3 && rand<2/3) {
+            comp='paper';
+          }
+          else {
+            comp='scissor';
+          }
+        
+
+      }
+      function player(Move)
+      {
+        if(Move==='Rock'){
+          if(comp==='rock'){
+            result='tie';
+          }
+          else if(comp==='paper'){
+            result='loose';
+          }
+          else{
+            result='win';
+          }
+
+        }
+        if(Move==='paper')
+        {
+          if(comp==='rock'){
+            result='win';
+          }
+          else if(comp==='paper'){
+            result='tie';
+          }
+          else{
+            result='loose';
+          }
+
+        }
+        if(Move==='scissor')
+        {
+          if(comp==='rock'){
+            result='loose';
+          }
+          else if(comp==='paper'){
+            result='win';
+          }
+          else{
+            result='tie';
+          }
+        }
+      
+      alert(`you choose ${Move} , computer choose ${comp}, you ${result}`);
+      }
+
+      
+      </script>
+      <button onClick="
+          computerresp();
+          result=player('rock');
+          
+          
+
+          ">rock</button>
+
+
+
+          <button onClick="
+          computerresp();
+          player('paper');
+          alert(`you choose paer , computer choose ${comp}, you ${result}`);
+
+          ">paper</button>
+
+
+          <button onClick="
+          computerresp();
+          player('scissor');
+          alert(`you choose scissor , computer choose ${comp}, you ${result}`);
+
+          ">scissor</button>
+  </body>
+</html>
